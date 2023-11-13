@@ -2,22 +2,22 @@
 
 // set up ======================================================================
 // get all the tools we need
-var express = require('express');
-var app = express();
-var port = process.env.PORT || 8080;
+const express = require('express');
+const app = express();
+const port = process.env.PORT || 8080;
 const MongoClient = require('mongodb').MongoClient //setup to help me talk to db
-var mongoose = require('mongoose');//setup mongoose to help us talk to mongodbs better/easier
-var passport = require('passport');//for authentication
-var flash = require('connect-flash');//for our error messages.
+const mongoose = require('mongoose');//setup mongoose to help us talk to mongodbs better/easier
+const passport = require('passport');//for authentication
+const flash = require('connect-flash');//for our error messages.
 
-var morgan = require('morgan');//how we are doing our logging in terminal
-var cookieParser = require('cookie-parser');//enables us to look at the logged in session. user can leave computer and still come back can see if theyre still logged in by looking at their cookies.
-var bodyParser = require('body-parser');
-var session = require('express-session');
+const morgan = require('morgan');//how we are doing our logging in terminal
+const cookieParser = require('cookie-parser');//enables us to look at the logged in session. user can leave computer and still come back can see if theyre still logged in by looking at their cookies.
+const bodyParser = require('body-parser');
+const session = require('express-session');
 
-var configDB = require('./config/database.js');//grabbing our database same as plugging in server url object
+const configDB = require('./config/database.js');//grabbing our database same as plugging in server url object
 
-var db
+let db
 
 // configuration ===============================================================
 mongoose.connect(configDB.url, (err, database) => {//configDB.url is taking the object configDBurl in our config folder's database.js file and getting the url property's value  from that object, which is our server's url.
@@ -51,4 +51,4 @@ app.use(flash()); // use connect-flash for flash messages stored in session
 
 // launch ======================================================================
 app.listen(port);
-console.log('The magic happens on port ' + port);//console.log to show us that our server is running.
+console.log('The magic happens on port ' + port);//console.log to show us that our server is running
