@@ -5,7 +5,7 @@
 For this savage auth project I wrote code that would correctly implement the thumbs up and thumbs down icons as PUT requests on the backedn CRUD functionality for comments left by users. I also made sure to allow for DELETE requests that would delete each comment from the message board of this app.
 
 What I did to build this app:
-I used HTML, CSS, JavaScript, and Node.js to complete this app.
+I used JavaScript and Node.js to complete this app.
 
 ## Lessons Learned :
 * CRUD functionality is all about object field maniupulation and implementation. Once I grasped that the backed end holds objects in JSON, I understood how to pull those values out of these objects to use them.
